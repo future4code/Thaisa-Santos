@@ -24,23 +24,29 @@ function retornaArrayOrdenado(array) {
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
     
-    
-    
+    return array.filter(pares => (pares %2)== 0);
+     
 }
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+
+
 }
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  
+    let numeroMaior = array[0]
+    for (let i = 1; i < array.length; i++) {
+        if(array[i] > numeroMaior) { numeroMaior = array[i]  }
+    }  
+    return numeroMaior
 }
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-
+     const Numeros = num1, num2
+    return maiorNumero
 }
 
 // EXERCÍCIO 08
@@ -80,9 +86,12 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
-}
-
+   return contas.map((conta)=>{
+       let soma = conta.compras.reduce((acc,cur) => acc+ cur , 0);
+       let saldo = conta.saldoTotal
+       return {...conta, saldoTotal: saldo - soma, compras: []}
+    })
+}   
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
   
