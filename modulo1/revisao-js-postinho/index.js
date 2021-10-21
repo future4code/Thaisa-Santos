@@ -53,29 +53,31 @@ const login = () => {
     const login = "Labenu"
     const senhaUsuario = prompt("digite sua senha:")
     
-    if(senha === login) console.log("usuario logado")
+    if(senhaUsuario == login){ 
+        console.log("usuario logado");
          
-   else console.log("senha invalida")
-        
-} 
-//  Sua lógica aqui
-//console.log(login());
+    }else{
+        console.log("senha invalida")
+    }    
+
+    
+}
+console.log(login());
 // Exercício 5----------------------------------------------------------------------------------------------------
 
 function primeiraDose() {
  const nome = prompt("digite seu nome")
- const nome = Janderson
- const vacinaTomou = prompt("Qual vacina você tomou")
- const vacina = "astrazenica"
+ const vacina = prompt("Qual vacina você tomou")
+ 
  if(vacina ==="coronavac") {
      tempo = 28
  } else if (vacina === "astrazenica") {
      tempo = 90
  } else if (vacina === "pfizer") {
       tempo = 90
- }
+    }
  
- return 'ola ${nome}! A proxima dose da ${vacina} é daqui ${90} dias. Compareça no posto no ${22/12/2021}'
+    return 'ola ${nome}! A proxima dose da ${vacina} é daqui ${90} dias. Compareça no posto no ${22/12/2021}'
     //  Sua lógica aqui
 }
 console.log(primeiraDose());
@@ -91,11 +93,15 @@ const segundaDose = (nomeDoUsuario) => {
         { nome: "Barbara", imunizacao: "incompleta" },
         { nome: "Carlos", imunizacao: "incompleta" }
     ]
+    
+    const retorno = nomeDoUsuario.map((pessoa)=>{
+       if(pessoa.nome === nomeDoUsuario){
+        
+          console.log("nome: Barbara, imunizacao completa")
 
-    //  Sua lógica aqui
-
-
-}
+        }
+    }
+}     //  Sua lógica aqui} 
 console.log(segundaDose("Barbara"));
 
 // Exercício 7 --------------------------------------------------------------------------------------
@@ -108,14 +114,19 @@ const avisoAosAtrasados = () => {
     ]
 
     //  Sua lógica aqui
-
+    const lembrente = usuarios.filter((pessoa)=>{
+        if(pessoa.imunizacao === "incompleta"){
+            return true
+        }
+    })
+    console.log(lembrente);
 }
 console.log(avisoAosAtrasados());
 
 
 // DESAFIO------------------------------------------------------------------------------------------
 
-const usuarios = [
+const usuario = [
     {
         nome: "Artur",
         ano: 2000,
